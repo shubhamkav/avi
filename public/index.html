@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08060a" />
+  <meta name="description" content="A private digital scrapbook." />
+  <title>Avi · A Little Scrapbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="grain"></div><div id="sparkLayer"></div>
+  <div class="vignette"></div>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div><div class="ambient ambient-c"></div>
+  <div class="petals" id="petals"></div>
+
+  <!-- 01. VIDEO INTRO -->
+  <section class="video-intro" id="videoIntro">
+    <video id="introVideo" class="intro-video" playsinline preload="auto">
+      <source id="introSource" src="/assets/intro.mp4" type="video/mp4" />
+    </video>
+    <div class="video-fallback" id="videoFallback">
+      <div class="fallback-orb"></div>
+      <span class="micro">A LITTLE SOMETHING FOR YOU</span>
+      <h1>Before you open this…<br><em>watch this.</em></h1>
+      <p>Your video will appear here when you add <b>intro.mp4</b>.</p>
+    </div>
+    <div class="video-overlay"></div>
+    <div class="video-ui">
+      <div class="video-brand">FOR AVI <span>✦</span></div>
+      <div class="video-progress"><i id="videoProgress"></i></div>
+      <div class="video-actions">
+        <button id="playIntro" class="primary-intro-btn" type="button">▶ Tap to play with sound</button>
+        <button id="skipIntro" class="ghost-btn" type="button">Skip intro <span>↗</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. CINEMATIC NOTEBOOK OPENING -->
+  <section class="book-intro" id="bookIntro" aria-hidden="true">
+    <div class="intro-copy">
+      <span class="micro">A PRIVATE COLLECTION</span>
+      <p>Some memories deserve their own little world.</p>
+    </div>
+    <div class="book-scene" id="bookScene">
+      <div class="floor-shadow"></div>
+      <div class="closed-book" id="closedBook">
+        <div class="book-back"></div>
+        <div class="book-pages-edge"></div>
+        <div class="book-cover-front">
+          <div class="cover-texture"></div>
+          <div class="cover-border"></div>
+          <div class="cover-content">
+            <span class="cover-kicker">A LITTLE BOOK FOR</span>
+            <h1>Avi</h1>
+            <div class="cover-heart">✦</div>
+            <p>memories · moments · little things</p>
+            <span class="cover-date">made with care · by Shubham Karn</span>
+          </div>
+        </div>
+        <div class="page-fan fan-a"></div><div class="page-fan fan-b"></div><div class="page-fan fan-c"></div>
+      </div>
+    </div>
+    <button class="open-book-btn" id="openBook"><span>Open our story</span><b>↓</b></button>
+    <div class="book-intro-bottom">Turn the first page <span>✦</span></div>
+  </section>
+
+  <!-- 03. MAIN SCRAPBOOK -->
+  <main class="site-shell" id="siteShell" aria-hidden="true">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>FOR AVI</span></div>
+      <div class="chapter" id="chapterLabel">HOME · 01</div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Toggle music">♫</button>
+    </header>
+
+    <section class="book-stage" id="bookStage">
+      <div class="stage-copy left">SCROLL TO EXPLORE <span>↓</span></div>
+      <div class="stage-copy right">A LITTLE WORLD FOR AVI <span>✦</span></div>
+      <div class="stage-glow"></div>
+      <div class="book-shadow"></div>
+      <div class="scrapbook" id="scrapbook">
+        <div class="book-backdrop"></div>
+        <div class="page left-page" id="leftPage"></div>
+        <div class="page right-page" id="rightPage"></div>
+        <div class="spine"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="page-edge edge-left"></div><div class="page-edge edge-right"></div>
+      </div>
+      <div class="page-controls">
+        <button id="prevPage" aria-label="Previous page">←</button>
+        <div class="progress-wrap"><span id="pageNumber">01</span><div class="progress"><i id="progressBar"></i></div><span>06</span></div>
+        <button id="nextPage" aria-label="Next page">→</button>
+      </div>
+      <div class="swipe-hint">← swipe / drag →</div>
+    </section>
+  </main>
+
+  <audio id="music" loop preload="metadata" src="/assets/our-song.mp3"></audio>
+
+  <template id="homeTemplate">
+    <div class="paper-content home-content">
+      <div class="page-meta"><span>ENTRY 01</span><span>♥</span></div>
+      <div class="eyebrow">Hey, you</div>
+      <h1>My favorite<br><em>place is with you.</em></h1>
+      <p class="hand-copy">A tiny corner of the internet made from all the things I never want to forget — the laughs, the chaos, the quiet moments, and you.</p>
+      <div class="hero-polaroid photo-placeholder has-image" data-label="AVI"><img src="/assets/avi-01.jpg" alt="Avi" loading="eager"><div class="photo-shine"></div></div>
+      <div class="torn-note"><b>FROM A FRIEND</b> I made these pages simply to remind you how genuinely wonderful you are. Keep being you, Avi.</div>
+    </div>
+    <div class="paper-content home-right">
+      <div class="section-heading"><span>Some of my</span> favorite moments</div>
+      <div class="photo-grid">
+        <figure><div class="mini-polaroid photo-placeholder has-image"><img src="/assets/avi-02.jpg" alt="Avi memory" loading="lazy"></div></figure>
+        <figure><div class="mini-polaroid photo-placeholder has-image"><img src="/assets/avi-04.jpg" alt="Avi memory" loading="lazy"></div></figure>
+        <figure><div class="mini-polaroid photo-placeholder has-image"><img src="/assets/avi-03.jpg" alt="Avi memory" loading="lazy"></div></figure>
+      </div>
+      <div class="mini-letter"><span class="letter-label">A note from your friend</span><p>From a friend’s point of view, you are one of those people who makes ordinary moments brighter without even trying. ✦</p></div>
+      <div class="bottom-line">Here’s to all the pages still waiting to happen… <b>∞</b><br></div>
+    </div>
+  </template>
+
+  <template id="aboutTemplate">
+    <div class="paper-content split-page"><div class="page-meta"><span>ENTRY 02</span><span>♡</span></div><div class="eyebrow">A page about Avisha — my Avi</div><h2>About <em>Avi</em></h2><p class="hand-copy">If I tried to describe Avi without running out of words, I'd probably need an entire library.</p><div class="facts"><div><b>01</b><span>Your smile<br></span></div><div><b>02</b><span>Your heart<br></span></div><div><b>03</b><span>Your little things<br></span></div></div><div class="torn-note">You don't have to be perfect. You just have to be you.</div></div>
+    <div class="paper-content quote-page"><div class="big-quote">“</div><p>Some people walk into your life and quietly become one of the best parts of it.</p><div class="signature">— me, about you</div><div class="doodle-heart">♡</div></div>
+  </template>
+
+  <template id="storyTemplate">
+    <div class="paper-content"><div class="page-meta"><span>ENTRY 03</span><span>↗</span></div><div class="eyebrow">The timeline</div><h2>Our <em>story</em></h2><div class="timeline"><div><span>01</span><article><b>The beginning</b><p>That first conversation that somehow became more important than we knew.</p></article></div><div><span>02</span><article><b>The comfortable days</b><p>When talking for hours started feeling completely normal.</p></article></div><div><span>03</span><article><b>The little memories</b><p>Inside jokes, random texts, late-night talks and tiny surprises.</p></article></div><div><span>∞</span><article><b>Still writing</b><p>This isn't the ending. It's another page.</p></article></div></div></div>
+    <div class="paper-content story-photo"><div class="taped-photo photo-placeholder has-image"><img src="/assets/avi-05.jpg" alt="Avi memory" loading="lazy"></div><div class="stamp">KEEP<br>FOREVER</div></div>
+  </template>
+
+  <template id="reasonsTemplate">
+    <div class="paper-content"><div class="page-meta"><span>ENTRY 04</span><span>♥</span></div><div class="eyebrow">A completely incomplete list</div><h2>Reasons you are <em>so special</em></h2><div class="reasons-list"><p><span>01</span>You make me laugh.</p><p><span>02</span>You make ordinary days special.</p><p><span>03</span>You remember the little things.</p><p><span>04</span>You make me want to become better.</p><p><span>05</span>You feel like home.</p><p><span>06</span>Because you are completely yourself.</p></div></div>
+    <div class="paper-content reason-right"><div class="giant-heart">♥</div><p>And honestly…<br>there are <em>so many more.</em></p><span class="scribble">I could keep writing →</span></div>
+  </template>
+
+  <template id="memoriesTemplate">
+    <div class="paper-content"><div class="page-meta"><span>ENTRY 05</span><span>📷</span></div><div class="eyebrow">Snapshots I want to keep</div><h2>Memory <em>lane</em></h2><div class="memory-wall"><div class="wall-photo photo-placeholder has-image tilt-a"><img src="/assets/avi-01.jpg" alt="Avi memory" loading="lazy"></div><div class="wall-photo photo-placeholder has-image tilt-b"><img src="/assets/avi-03.jpg" alt="Avi memory" loading="lazy"></div><div class="wall-photo photo-placeholder has-image tilt-c"><img src="/assets/avi-04.jpg" alt="Avi memory" loading="lazy"></div><div class="wall-photo photo-placeholder has-image tilt-d"><img src="/assets/avi-06.jpg" alt="Avi memory" loading="lazy"></div></div></div>
+    <div class="paper-content"><div class="page-meta"><span>KEEP THESE</span><span>∞</span></div><div class="eyebrow">The tiny things matter too</div><h2>Little <em>things</em></h2><ul class="check-list"><li>Our random conversations</li><li>The songs that remind me of you</li><li>Our funniest inside jokes</li><li>Every “good morning” and “good night”</li><li>The moments nobody else knows about</li></ul><div class="torn-note">Some memories are better kept between two hearts.</div></div>
+  </template>
+
+  <template id="notesTemplate">
+    <div class="paper-content"><div class="page-meta"><span>ENTRY 06</span><span>✉</span></div><div class="eyebrow">Open these slowly, Avi</div><h2>Notes <em>for Avi</em></h2><div class="note-stack" id="noteStack"></div></div>
+    <div class="paper-content letter-page"><div class="envelope">✉</div><h3>Open whenever you miss me, Avi.</h3><p>Take a breath, smile a little, and remember that somewhere in this giant world there is someone who is ridiculously grateful for you.</p><div class="signature">From your friend,<br><b>Shubham Karn</b></div></div>
+  </template>
+
+
+
+  <script src="/app.js"></script>
+</body>
+</html>
